@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: techjargon
-  namespace: default
+  namespace: techjargon
 spec:
   replicas: 3
   selector:
@@ -10,6 +10,7 @@ spec:
       app: techjargon
   template:
     metadata:
+      namespace: techjargon
       labels:
         app: techjargon
     spec:
