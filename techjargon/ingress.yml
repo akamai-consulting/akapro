@@ -19,7 +19,7 @@ spec:
             name: techjargon-service
             port: 
               number: 12909
-tls:
-- hosts:
-  - techjargon.perfx.dev
-  secretName: techjargon-ingress-cert 
+  tls:
+  - hosts:
+    - techjargon.perfx.dev
+    secretName: techjargon-ingress-cert 
