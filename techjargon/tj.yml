@@ -13,7 +13,7 @@ spec:
       annotations:
         prometheus.io/scrape: true
         prometheus.io/path: /data/metrics
-        prometheus.io/port: 12909
+        prometheus.io/port: "12909"
       namespace: techjargon
       labels:
         app: techjargon
