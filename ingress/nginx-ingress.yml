@@ -382,6 +382,10 @@ spec:
     protocol: TCP
     nodePort: 30001
     name: tj
+  - targetPort: 9113
+    port: 9113
+    protocol: TCP
+    name: prometheus
   selector:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
