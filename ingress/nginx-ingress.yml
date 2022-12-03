@@ -378,6 +378,7 @@ spec:
     protocol: TCP
     targetPort: https
   - targetPort: 12909
+    port: 12909
     protocol: TCP
     nodePort: 30001
     name: tj
