@@ -3,6 +3,10 @@ kind: Service
 metadata:
   name: techjargon-service
   namespace: techjargon
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: /data/metrics
+    prometheus.io/port: "12909"
 spec:
   ports:
   - name: http
