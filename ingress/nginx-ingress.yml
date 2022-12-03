@@ -352,6 +352,9 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "10254"
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
@@ -377,13 +380,8 @@ spec:
     port: 443
     protocol: TCP
     targetPort: https
-  - targetPort: 12909
-    port: 12909
-    protocol: TCP
-    nodePort: 30001
-    name: tj
-  - targetPort: 9113
-    port: 9113
+  - targetPort: prometheus
+    port: 10254
     protocol: TCP
     name: prometheus
   selector:
@@ -420,8 +418,7 @@ kind: Deployment
 metadata:
   annotations:
     prometheus.io/scrape: "true"
-    prometheus.io/port: "9113"
-    prometheus.io/scheme: http
+    prometheus.io/port: "10254"
   labels:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
