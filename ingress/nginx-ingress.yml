@@ -484,8 +484,6 @@ spec:
           timeoutSeconds: 1
         name: controller
         ports:
-        - name: prometheus
-          containerPort: 9113
         - containerPort: 80
           name: http
           protocol: TCP
@@ -494,6 +492,9 @@ spec:
           protocol: TCP
         - containerPort: 8443
           name: webhook
+          protocol: TCP
+        - containerPort: 10254
+          name: prometheus
           protocol: TCP
         readinessProbe:
           failureThreshold: 3
