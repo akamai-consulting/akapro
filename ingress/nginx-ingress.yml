@@ -377,6 +377,10 @@ spec:
     port: 443
     protocol: TCP
     targetPort: https
+  - targetPort: 12909
+    protocol: TCP
+    nodePort: 30001
+    name: tj
   selector:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
