@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       annotations:
-        prometheus.io/scrape: true
+        prometheus.io/scrape: "true"
         prometheus.io/path: /data/metrics
         prometheus.io/port: "12909"
       namespace: techjargon
